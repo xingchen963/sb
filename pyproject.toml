@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proxy-system-nse"
+version = "0.1.0"
+description = "Standalone Network Security Engine for Proxy System"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0,<7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "pytest-cov>=5,<7"]
+
+[tool.setuptools.packages.find]
+include = ["nse*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
