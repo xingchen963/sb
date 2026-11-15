@@ -1,0 +1,22 @@
+schema_version: 1
+metadata:
+  name: default
+  description: Conservative cross-platform baseline
+security:
+  level: strict
+  dns:
+    protocols: [doh, dot]
+    validation:
+      tls_certificate: strict
+      dnssec: true
+    fallback:
+      allow_plaintext: false
+      mode: fail_closed
+  tls:
+    minimum_version: "1.2"
+    prefer_version: "1.3"
+    verify_certificates: true
+    verify_hostname: true
+  privacy:
+    minimize_logs: true
+    report_metadata_exposure: true
